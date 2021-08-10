@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'blog';
-  links: string[] = ['Usuarios', 'Posteos', 'Albumes'];
-  activeLink = this.links[0];
 }
