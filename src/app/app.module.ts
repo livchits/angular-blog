@@ -6,8 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { HeaderComponent } from './components/header/header.component';
 @NgModule({
-  declarations: [AppComponent, TabsComponent],
+  declarations: [AppComponent, TabsComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
