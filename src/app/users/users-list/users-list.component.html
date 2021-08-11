@@ -1,1 +1,6 @@
-<p>users-list works!</p>
+<mat-nav-list *ngIf="users">
+  <a mat-list-item *ngFor="let user of users" routerLink="{{ user.id }}">
+    {{ user.name }}
+    <mat-divider></mat-divider>
+  </a>
+</mat-nav-list>
