@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-type Link = {
-  label: string;
-  path: string;
-};
+import { links } from 'src/app/constants/links';
 
 @Component({
   selector: 'app-tabs',
@@ -15,11 +11,6 @@ export class TabsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  links: Link[] = [
-    { label: 'Usuarios', path: '/users' },
-    { label: 'Posteos', path: '/posts' },
-    { label: 'Albumes', path: '/albums' },
-  ];
-
-  activeLink = this.links[0];
+  tabLinks = links;
+  activeLink = this.tabLinks[0];
 }
