@@ -1,3 +1,4 @@
+import { links } from 'src/app/constants/links';
 import { UsersService } from './../users.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
@@ -13,6 +14,8 @@ export class UsersInfoComponent implements OnInit {
     private usersService: UsersService,
     private route: ActivatedRoute
   ) {}
+
+  userLinks = links.filter(({ path }) => path !== '/users');
 
   @Input() user?: User;
 

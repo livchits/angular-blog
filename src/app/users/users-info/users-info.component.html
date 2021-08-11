@@ -22,8 +22,12 @@
     {{ user.company.bs }}</mat-card-content
   >
   <div class="buttons-container">
-    <a mat-stroked-button color="primary" routerLink="/posts">Posteos</a>
-    <a mat-stroked-button color="primary" routerLink="/albums">Álbumes</a>
-    <a mat-stroked-button color="primary" routerLink="/todos">TODOs</a>
+    <a
+      *ngFor="let userLink of userLinks"
+      mat-stroked-button
+      color="primary"
+      routerLink="{{ userLink.path }}"
+      >{{ userLink.label }}</a
+    >
   </div>
 </mat-card>
