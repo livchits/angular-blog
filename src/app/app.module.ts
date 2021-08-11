@@ -1,3 +1,5 @@
+import { UsersModule } from './users/users.module';
+import { UsersListComponent } from './users/users-list/users-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -17,6 +19,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     MatToolbarModule,
     MatTabsModule,
     HttpClientModule,
+    UsersModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
