@@ -1,0 +1,29 @@
+<!-- <mat-card *ngIf="user">{{ user.name }}</mat-card> -->
+<mat-card *ngIf="user">
+  <mat-card-title>{{ user.name }}</mat-card-title>
+  <mat-card-subtitle
+    >Website:
+    <a href="https://{{ user.website }}">{{
+      user.website
+    }}</a></mat-card-subtitle
+  >
+  <mat-divider></mat-divider>
+  <mat-card-content class="company">Company</mat-card-content>
+  <mat-card-content
+    ><span class="category">Name:</span>
+    {{ user.company.name }}</mat-card-content
+  >
+  <mat-card-content
+    ><span class="category">Catch Phrase: </span
+    >{{ user.company.catchPhrase }}</mat-card-content
+  >
+  <mat-card-content
+    ><span class="category">Business System:</span>
+    {{ user.company.bs }}</mat-card-content
+  >
+  <div class="buttons-container">
+    <a mat-stroked-button color="primary" routerLink="/posts">Posteos</a>
+    <a mat-stroked-button color="primary" routerLink="/albums">Álbumes</a>
+    <a mat-stroked-button color="primary" routerLink="/todos">TODOs</a>
+  </div>
+</mat-card>
