@@ -2,8 +2,7 @@
   <a
     mat-tab-link
     *ngFor="let link of tabLinks"
-    (click)="activeLink = link"
-    [active]="activeLink == link"
+    [active]="currentRoute == link.path"
     routerLink="{{ link.path }}"
   >
     {{ link.label }}
