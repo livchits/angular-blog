@@ -1,3 +1,4 @@
+import { PostsModule } from './posts/posts.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -19,6 +20,7 @@ import { UsersModule } from './users/users.module';
     MatTabsModule,
     HttpClientModule,
     UsersModule,
+    PostsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
