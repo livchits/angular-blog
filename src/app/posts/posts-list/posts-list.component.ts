@@ -12,8 +12,15 @@ export class PostsListComponent implements OnInit {
 
   posts: Post[] = [];
 
+  userIds: number[] = [1, 2, 3, 4];
+
   getPosts(): void {
-    this.postsService.getPosts().subscribe((posts) => (this.posts = posts));
+    this.postsService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+      this.userIds = this.posts.reduce((ids: number[], post) => {
+        return ids.includes(post.userId) ? ids : [...ids, post.userId];
+      }, []);
+    });
   }
 
   ngOnInit(): void {
