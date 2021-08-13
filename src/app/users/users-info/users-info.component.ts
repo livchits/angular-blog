@@ -1,6 +1,6 @@
 import { links } from 'src/app/constants/links';
 import { UsersService } from './../users.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +19,7 @@ export class UsersInfoComponent implements OnInit {
 
   currentPath = window.location.pathname;
 
-  @Input() user?: User;
+  user?: User;
 
   getUser(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
