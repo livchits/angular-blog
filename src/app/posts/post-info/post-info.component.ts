@@ -1,15 +1,27 @@
+import { ActivatedRoute } from '@angular/router';
+import { PostsService } from './../posts.service';
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-post-info',
   templateUrl: './post-info.component.html',
-  styleUrls: ['./post-info.component.scss']
+  styleUrls: ['./post-info.component.scss'],
 })
 export class PostInfoComponent implements OnInit {
+  constructor(
+    private postsService: PostsService,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor() { }
+  post?: Post;
 
-  ngOnInit(): void {
+  getPost(): void {
+    const postId = Number(this.route.snapshot.paramMap.get('id'));
+    this.postsService.getPost(postId).subscribe((post) => (this.post = post));
   }
 
+  ngOnInit(): void {
+    this.getPost();
+  }
 }
