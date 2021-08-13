@@ -11,7 +11,13 @@
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Buscar por título</mat-label>
-      <input type="search" matInput placeholder="Ingrese un texto..." />
+      <input
+        #search
+        type="search"
+        matInput
+        placeholder="Ingrese un texto..."
+        (keyup)="handleSearchChange(search.value)"
+      />
     </mat-form-field>
   </form>
   <mat-nav-list>

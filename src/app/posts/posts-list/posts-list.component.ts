@@ -34,6 +34,14 @@ export class PostsListComponent implements OnInit {
     this.filteredPosts = filteredPostsByUserId;
   }
 
+  handleSearchChange(searchText: string) {
+    const filteredPostsByTitle = searchText
+      ? this.posts.filter(({ title }) => title.includes(searchText))
+      : this.posts;
+
+    this.filteredPosts = filteredPostsByTitle;
+  }
+
   ngOnInit(): void {
     this.getPosts();
   }
