@@ -6,9 +6,10 @@ import { AppRoutingModule } from './../app-routing.module';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { PostInfoComponent } from './post-info/post-info.component';
 
 @NgModule({
-  declarations: [PostsListComponent],
+  declarations: [PostsListComponent, PostInfoComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
