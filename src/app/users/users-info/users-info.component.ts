@@ -17,6 +17,8 @@ export class UsersInfoComponent implements OnInit {
 
   userLinks = links.filter(({ path }) => path !== '/users');
 
+  currentPath = window.location.pathname;
+
   @Input() user?: User;
 
   getUser(): void {
