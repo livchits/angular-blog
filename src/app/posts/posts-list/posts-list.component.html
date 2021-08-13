@@ -1,14 +1,18 @@
 <mat-nav-list *ngIf="posts">
   <mat-form-field appearance="fill">
     <mat-label>Filtre por ID de usuario</mat-label>
-    <mat-select>
-      <mat-option>Todos</mat-option>
+    <mat-select (selectionChange)="handleSelectChange($event)">
+      <mat-option value="all">Todos</mat-option>
       <mat-option *ngFor="let userId of userIds" [value]="userId"
         >{{ userId }}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <a mat-list-item *ngFor="let post of posts" routerLink="{{ post.id }}">
+  <a
+    mat-list-item
+    *ngFor="let post of filteredPosts"
+    routerLink="{{ post.id }}"
+  >
     {{ post.title }}
     <mat-divider></mat-divider>
   </a>
