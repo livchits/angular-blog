@@ -3,3 +3,14 @@ mat-nav-list {
   margin-inline: auto;
   padding-inline: 2em;
 }
+
+form {
+  padding-top: 2em;
+}
+
+mat-form-field {
+  width: 80%;
+  max-width: 65ch;
+  display: block;
+  margin-inline: auto;
+}
