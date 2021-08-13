@@ -25,7 +25,7 @@
       *ngFor="let userLink of userLinks"
       mat-stroked-button
       color="primary"
-      routerLink="{{ userLink.path }}"
+      routerLink="{{ userLink.path }}/{{ user.id }}"
       >{{ userLink.label }}</a
     >
   </div>
