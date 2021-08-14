@@ -1,0 +1,9 @@
+<section *ngIf="comments">
+  <mat-card *ngFor="let comment of comments">
+    <mat-card-title
+      >Nombre: <span class="name">{{ comment.name }}</span></mat-card-title
+    >
+    <p><span class="email">Email: </span>{{ comment.email }}</p>
+    <p>{{ comment.body }}</p>
+  </mat-card>
+</section>

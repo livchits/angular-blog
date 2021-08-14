@@ -1,0 +1,28 @@
+section {
+  max-width: 80em;
+  margin-inline: auto;
+
+  @media only screen and (min-width: 800px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  mat-card {
+    margin: 1em;
+
+    @media only screen and (min-width: 800px) {
+      width: 40%;
+      height: 14em;
+    }
+  }
+
+  .name {
+    font-weight: lighter;
+    line-height: 1;
+  }
+
+  .email {
+    font-weight: bolder;
+  }
+}
