@@ -5,10 +5,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { AppRoutingModule } from './../app-routing.module';
-import { UsersInfoComponent } from './users-info/users-info.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 import { UsersListComponent } from './users-list/users-list.component';
 @NgModule({
-  declarations: [UsersListComponent, UsersInfoComponent],
+  declarations: [UsersListComponent, UserInfoComponent],
   imports: [
     CommonModule,
     MatDividerModule,
