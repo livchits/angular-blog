@@ -1,4 +1,3 @@
-import { PostsModule } from './posts/posts.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -7,8 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommentsModule } from './comments/comments.module';
 import { HeaderComponent } from './components/header/header.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { PostsModule } from './posts/posts.module';
 import { UsersModule } from './users/users.module';
 @NgModule({
   declarations: [AppComponent, TabsComponent, HeaderComponent],
@@ -21,6 +22,7 @@ import { UsersModule } from './users/users.module';
     HttpClientModule,
     UsersModule,
     PostsModule,
+    CommentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
