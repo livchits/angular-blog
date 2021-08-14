@@ -1,1 +1,21 @@
-<p>post-info works!</p>
+<section *ngIf="post">
+  <mat-card>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <p><span>Id de usuario: </span>{{ post.userId }}</p>
+    <mat-card-subtitle>{{ post.body }}</mat-card-subtitle>
+    <div class="buttons-container">
+      <a
+        mat-stroked-button
+        color="primary"
+        routerLink="/users/{{ post.userId }}"
+        >Usuario</a
+      >
+      <a
+        mat-stroked-button
+        color="primary"
+        routerLink="/posts/{{ post.id }}/comments"
+        >Comentarios</a
+      >
+    </div>
+  </mat-card>
+</section>

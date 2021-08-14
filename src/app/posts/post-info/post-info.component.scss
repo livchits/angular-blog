@@ -1,0 +1,14 @@
+mat-card {
+  max-width: 40ch;
+  margin-inline: auto;
+  margin-top: 6em;
+
+  &-title {
+    margin-bottom: 0.75em;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
