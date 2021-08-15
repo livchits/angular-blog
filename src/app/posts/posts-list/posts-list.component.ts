@@ -20,7 +20,7 @@ export class PostsListComponent implements OnInit {
   userIds: number[] = [];
 
   selectedUser: number | 'all' =
-    Number(this.route.snapshot.paramMap.get('id')) || 'all';
+    Number(this.route.snapshot.paramMap.get('userId')) || 'all';
 
   getPosts(): void {
     this.postsService.getPosts().subscribe((posts) => {

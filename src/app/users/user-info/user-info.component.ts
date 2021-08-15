@@ -22,7 +22,7 @@ export class UserInfoComponent implements OnInit {
   user?: User;
 
   getUser(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = Number(this.route.snapshot.paramMap.get('userId'));
     this.usersService.getUser(id).subscribe((user) => (this.user = user));
   }
 

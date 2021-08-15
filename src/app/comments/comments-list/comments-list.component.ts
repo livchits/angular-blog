@@ -17,7 +17,7 @@ export class CommentsListComponent implements OnInit {
   comments: Comment[] = [];
 
   getComments(): void {
-    const postId = Number(this.route.snapshot.paramMap.get('id'));
+    const postId = Number(this.route.snapshot.paramMap.get('postId'));
     this.commentsService
       .getCommentsByPostId(postId)
       .subscribe((comments) => (this.comments = comments));

@@ -8,10 +8,12 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersListComponent },
-  { path: 'users/:id', component: UserInfoComponent },
+  { path: 'users/:userId', component: UserInfoComponent },
+  { path: 'users/:userId/posts', component: PostsListComponent },
+  { path: 'users/:userId/posts/:postId', component: PostInfoComponent },
   { path: 'posts', component: PostsListComponent },
-  { path: 'posts/:id', component: PostInfoComponent },
-  { path: 'posts/:id/comments', component: CommentsListComponent },
+  { path: 'posts/:postId', component: PostInfoComponent },
+  { path: 'posts/:postId/comments', component: CommentsListComponent },
 ];
 
 @NgModule({

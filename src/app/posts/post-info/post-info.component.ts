@@ -17,7 +17,7 @@ export class PostInfoComponent implements OnInit {
   post?: Post;
 
   getPost(): void {
-    const postId = Number(this.route.snapshot.paramMap.get('id'));
+    const postId = Number(this.route.snapshot.paramMap.get('postId'));
     this.postsService.getPost(postId).subscribe((post) => (this.post = post));
   }
 
