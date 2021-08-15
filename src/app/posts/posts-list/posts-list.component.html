@@ -2,7 +2,10 @@
   <form>
     <mat-form-field appearance="fill">
       <mat-label>Filtre por ID de usuario</mat-label>
-      <mat-select (selectionChange)="handleSelectChange($event)">
+      <mat-select
+        (selectionChange)="handleSelectChange()"
+        [(value)]="selectedUser"
+      >
         <mat-option value="all">Todos</mat-option>
         <mat-option *ngFor="let userId of userIds" [value]="userId"
           >{{ userId }}
