@@ -3,7 +3,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Filtre por ID de usuario</mat-label>
       <mat-select
-        (selectionChange)="handleSelectChange()"
+        (selectionChange)="changeFilteredPosts(search.value)"
         [(value)]="selectedUser"
       >
         <mat-option value="all">Todos</mat-option>
@@ -19,7 +19,7 @@
         type="search"
         matInput
         placeholder="Ingrese un texto..."
-        (keyup)="handleSearchChange(search.value)"
+        (keyup)="changeFilteredPosts(search.value)"
       />
     </mat-form-field>
   </form>

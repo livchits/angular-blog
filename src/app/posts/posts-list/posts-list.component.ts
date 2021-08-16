@@ -27,30 +27,27 @@ export class PostsListComponent implements OnInit {
       this.posts = posts;
       this.filteredPosts =
         typeof this.selectedUser === 'number'
-          ? this.posts.filter((post) => post.userId === this.selectedUser)
+          ? this.filterPostsByUserId(this.posts)
           : this.posts;
 
-      this.userIds = this.posts.reduce((ids: number[], post) => {
-        return ids.includes(post.userId) ? ids : [...ids, post.userId];
+      this.userIds = this.posts.reduce((ids: number[], { userId }) => {
+        return ids.includes(userId) ? ids : [...ids, userId];
       }, []);
     });
   }
 
-  handleSelectChange() {
-    const filteredPostsByUserId =
-      this.selectedUser === 'all'
-        ? this.posts
-        : this.posts.filter((post) => post.userId === this.selectedUser);
+  filterPostsByUserId = (posts: Post[]): Post[] => {
+    return this.selectedUser === 'all'
+      ? posts
+      : posts.filter(({ userId }) => userId === this.selectedUser);
+  };
 
-    this.filteredPosts = filteredPostsByUserId;
-  }
-
-  handleSearchChange(searchText: string) {
-    const filteredPostsByTitle = searchText
-      ? this.posts.filter(({ title }) => title.includes(searchText))
-      : this.posts;
-
-    this.filteredPosts = filteredPostsByTitle;
+  changeFilteredPosts(searchText: string) {
+    this.filteredPosts = searchText
+      ? this.filterPostsByUserId(this.posts).filter(({ title }) =>
+          title.includes(searchText)
+        )
+      : this.filterPostsByUserId(this.posts);
   }
 
   ngOnInit(): void {
