@@ -30,10 +30,16 @@ export class PostsListComponent implements OnInit {
           ? this.filterPostsByUserId(this.posts)
           : this.posts;
 
-      this.userIds = this.posts.reduce((ids: number[], { userId }) => {
-        return ids.includes(userId) ? ids : [...ids, userId];
-      }, []);
+      this.userIds = this.generateUsersIds(this.posts);
     });
+  }
+
+  generateUsersIds(posts: Post[]): number[] {
+    return posts.reduce(
+      (ids: number[], { userId }) =>
+        ids.includes(userId) ? ids : [...ids, userId],
+      []
+    );
   }
 
   filterPostsByUserId = (posts: Post[]): Post[] => {
