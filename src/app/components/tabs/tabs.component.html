@@ -2,7 +2,7 @@
   <a
     mat-tab-link
     *ngFor="let link of tabLinks"
-    [active]="currentRoute == link.path"
+    [active]="lastWordRoute === link.path"
     routerLink="{{ link.path }}"
   >
     {{ link.label }}
