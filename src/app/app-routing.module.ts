@@ -1,3 +1,4 @@
+import { AlbumsListComponent } from './albums/albums-list/albums-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommentsListComponent } from './comments/comments-list/comments-list.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsListComponent },
   { path: 'posts/:postId', component: PostInfoComponent },
   { path: 'posts/:postId/comments', component: CommentsListComponent },
+  { path: 'albums', component: AlbumsListComponent },
 ];
 
 @NgModule({

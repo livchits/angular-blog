@@ -4,6 +4,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlbumsModule } from './albums/albums.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommentsModule } from './comments/comments.module';
@@ -23,6 +24,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     PostsModule,
     CommentsModule,
+    AlbumsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
