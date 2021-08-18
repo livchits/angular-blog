@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'posts/:postId/comments', component: CommentsListComponent },
   { path: 'albums', component: AlbumsListComponent },
   { path: 'albums/:albumId', component: AlbumInfoComponent },
+  { path: 'users/:userId/albums', component: AlbumsListComponent },
 ];
 
 @NgModule({
