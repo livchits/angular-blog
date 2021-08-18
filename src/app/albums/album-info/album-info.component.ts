@@ -17,10 +17,12 @@ export class AlbumInfoComponent implements OnInit {
   album?: Album;
 
   getAlbum() {
-    const albumId = Number(this.route.snapshot.paramMap.get('albumId'));
-    this.albumsService
-      .getAlbum(albumId)
-      .subscribe((album) => (this.album = album));
+    const albumId = this.route.snapshot.paramMap.get('albumId');
+    if (albumId) {
+      this.albumsService
+        .getAlbum(albumId)
+        .subscribe((album) => (this.album = album));
+    }
   }
 
   ngOnInit(): void {

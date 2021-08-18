@@ -23,7 +23,7 @@ export class UsersService {
     return this.http.get<User[]>(this.usersUrl); //agregar manejo de errores
   }
 
-  getUser(id: number): Observable<User | undefined> {
+  getUser(id: string): Observable<User | undefined> {
     const url = `${this.usersUrl}/${id}`;
     return this.http.get<User>(url); //agregar manejo de errores
   }

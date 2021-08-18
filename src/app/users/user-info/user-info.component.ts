@@ -22,8 +22,10 @@ export class UserInfoComponent implements OnInit {
   user?: User;
 
   getUser(): void {
-    const id = Number(this.route.snapshot.paramMap.get('userId'));
-    this.usersService.getUser(id).subscribe((user) => (this.user = user));
+    const userId = this.route.snapshot.paramMap.get('userId');
+    if (userId) {
+      this.usersService.getUser(userId).subscribe((user) => (this.user = user));
+    }
   }
 
   ngOnInit(): void {
