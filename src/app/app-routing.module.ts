@@ -1,6 +1,7 @@
-import { AlbumsListComponent } from './albums/albums-list/albums-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AlbumInfoComponent } from './albums/album-info/album-info.component';
+import { AlbumsListComponent } from './albums/albums-list/albums-list.component';
 import { CommentsListComponent } from './comments/comments-list/comments-list.component';
 import { PostInfoComponent } from './posts/post-info/post-info.component';
 import { PostsListComponent } from './posts/posts-list/posts-list.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'posts/:postId', component: PostInfoComponent },
   { path: 'posts/:postId/comments', component: CommentsListComponent },
   { path: 'albums', component: AlbumsListComponent },
+  { path: 'albums/:albumId', component: AlbumInfoComponent },
 ];
 
 @NgModule({
