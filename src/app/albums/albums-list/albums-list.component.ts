@@ -1,3 +1,5 @@
+import { UsersService } from './../../users/users.service';
+import { ActivatedRoute } from '@angular/router';
 import { AlbumsService } from './../albums.service';
 import { Component, OnInit } from '@angular/core';
 import { Album } from '../album';
@@ -8,14 +10,26 @@ import { Album } from '../album';
   styleUrls: ['./albums-list.component.scss'],
 })
 export class AlbumsListComponent implements OnInit {
-  constructor(private albumsService: AlbumsService) {}
+  constructor(
+    private albumsService: AlbumsService,
+    private route: ActivatedRoute,
+    private usersService: UsersService
+  ) {}
 
   albums: Album[] = [];
 
   getAlbums() {
-    this.albumsService
-      .getAlbums()
-      .subscribe((albums) => (this.albums = albums));
+    const userId = this.route.snapshot.paramMap.get('userId');
+
+    if (userId) {
+      this.usersService
+        .getUsersAlbums(userId)
+        .subscribe((albums) => (this.albums = albums));
+    } else {
+      this.albumsService
+        .getAlbums()
+        .subscribe((albums) => (this.albums = albums));
+    }
   }
 
   ngOnInit(): void {
