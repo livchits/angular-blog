@@ -13,14 +13,14 @@ const routes: Routes = [
   { path: 'users/:userId', component: UserInfoComponent },
   { path: 'users/:userId/posts', component: PostsListComponent },
   { path: 'users/:userId/posts/:postId', component: PostInfoComponent },
+  { path: 'users/:userId/albums', component: AlbumsListComponent },
+  { path: 'users/:userId/albums/:albumId', component: AlbumInfoComponent },
   { path: 'posts', component: PostsListComponent },
   { path: 'posts/:postId', component: PostInfoComponent },
   { path: 'posts/:postId/comments', component: CommentsListComponent },
   { path: 'albums', component: AlbumsListComponent },
   { path: 'albums/:albumId', component: AlbumInfoComponent },
-  { path: 'users/:userId/albums', component: AlbumsListComponent },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
